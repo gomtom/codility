@@ -8,7 +8,7 @@ def solution(n)
   binary = n.to_s(2).slice(/1.*1/)
   
   # split the binary gaps
-  zeros = binary.split(/1/)
+  binary.empty? ? zeros = [] : zeros = binary.split(/1/)
     
   # no binary gaps? return 0 otherwise return the largest gap    
   zeros.empty? ? (return 0) : (return zeros.map { |zeros| zeros.length }.max)
